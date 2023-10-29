@@ -7,7 +7,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 # Function to get authentication token
 def get_auth_token():
-    url = 'https://api-v1.photovoltaik-angebotsvergleich.de/v1/login'
+    url = 'https://api-v1.photovoltaik-angebotsvergleich.de/v1/login?start=1490520000&stop=1698529875'
     headers = {'Content-Type': 'application/json'}
     data = {
         "user": "solation-api",
