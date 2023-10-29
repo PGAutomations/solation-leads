@@ -24,7 +24,7 @@ def get_auth_token():
 
 # Function to get leads using the authentication token
 def get_leads(auth_token):
-    url = 'https://api-v1.photovoltaik-angebotsvergleich.de/v1/leads?start=1490520000&stop=1698529875'
+    url = 'https://api-v1.photovoltaik-angebotsvergleich.de/v1/leads'
     headers = {'X-AUTH-TOKEN': auth_token}
     try:
         response = requests.get(url, headers=headers)
@@ -115,5 +115,5 @@ if __name__ == "__main__":
     if auth_token:
         leads = get_leads(auth_token)
         if leads and len(leads) > 0:
-            add_leads_to_monday([leads[0]])  # Process only the first lead
+            add_leads_to_monday(leads)  # Process all leads
 
