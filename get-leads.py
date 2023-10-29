@@ -7,7 +7,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 # Function to get authentication token
 def get_auth_token():
-    url = 'https://api-v1.photovoltaik-angebotsvergleich.de/v1/login?start=1490520000&stop=1698529875'
+    url = 'https://api-v1.photovoltaik-angebotsvergleich.de/v1/login'
     headers = {'Content-Type': 'application/json'}
     data = {
         "user": "solation-api",
@@ -24,7 +24,7 @@ def get_auth_token():
 
 # Function to get leads using the authentication token
 def get_leads(auth_token):
-    url = 'https://api-v1.photovoltaik-angebotsvergleich.de/v1/leads'
+    url = 'https://api-v1.photovoltaik-angebotsvergleich.de/v1/leads?start=1490520000&stop=1698529875'
     headers = {'X-AUTH-TOKEN': auth_token}
     try:
         response = requests.get(url, headers=headers)
